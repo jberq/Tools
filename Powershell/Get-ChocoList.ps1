@@ -1,6 +1,6 @@
 function Get-ChocoList {
     try {
-        if (Get-Command -CommandType Application -Name choco) {
+        if (Get-Command -CommandType Application -Name choco -ErrorAction Stop) {
             (choco list -l -r).foreach{
                 $app = $_.split('|')
                 [PSCustomObject]@{

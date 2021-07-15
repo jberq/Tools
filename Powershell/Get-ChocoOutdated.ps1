@@ -1,6 +1,6 @@
 function Get-ChocoOutdated {
     try {
-        if (Get-Command -CommandType Application -Name choco) {
+        if (Get-Command -CommandType Application -Name choco -ErrorAction Stop) {
             (choco outdated -r).foreach{
                 $app = $_.split('|')
                 [PSCustomObject]@{
