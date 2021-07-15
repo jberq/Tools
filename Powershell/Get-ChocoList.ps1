@@ -4,7 +4,7 @@ function Get-ChocoList {
             (choco list -lo -r).foreach{
                 $app = $_.split('|')
                 [PSCustomObject]@{
-                    Name           = $app[0]
+                    Name = $app[0]
                     CurrentVersion = $app[1]
                 }
             }
@@ -14,3 +14,4 @@ function Get-ChocoList {
         Write-Error "choco not found in PATH."
     }
 }
+
