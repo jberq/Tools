@@ -12,3 +12,7 @@ function Get-GreatestCommonDivisor ([int]$a, [int]$b) {
         $b
     }
 }
+
+try {
+    New-Alias -Name gcd -Value Get-GreatestCommonDivisor -ErrorAction Stop
+} catch {}
