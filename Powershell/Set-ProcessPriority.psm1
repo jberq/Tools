@@ -1,7 +1,7 @@
 function Set-ProcessPriority {
 
     # I only realized afterwards that System.Diagnostics.Process objects have a property called BasePriorityClass along with Get/Set methods.
-    # On the bright side, this function was made almost entirely using CIM/WMI, so in theory, it should be able to set process priorities remotely, which .NET alone can't natively do AFAIK. 
+    # On the bright side, this function was made almost entirely using CIM/WMI, so in theory, it should be able to set process priorities remotely, which .NET alone can't natively do AFAIK. (I haven't tested remote CIM sessions. Mileage may vary.)
 
     # This one is pretty reliable I've found, especially for CPU-intensive tasks such as encoding video, e.g.:
     ## gps ffmpeg | Set-ProcessPriority AboveNormal
